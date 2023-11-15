@@ -1,0 +1,271 @@
+.swal2-container {
+    display: grid;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    grid-template-areas: "top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";
+    grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+    height: 100%;
+    padding: .625em;
+    overflow-x: hidden;
+    transition: background-color .1s;
+    -webkit-overflow-scrolling: touch
+}
+
+.swal2-container.swal2-center>.swal2-popup {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center
+}
+
+.swal2-popup {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 100%);
+    width: 32em;
+    max-width: 100%;
+    padding: 0 0 1.25em;
+    border: none;
+    border-radius: 20px;
+    background: rgb(255, 253, 253);
+    color: #000000;
+    font-family: inherit;
+    font-size: 1rem
+}
+
+.swal2-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: .8em 1em 0;
+    color: inherit;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word
+}
+
+.swal2-actions {
+    display: flex;
+    z-index: 1;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 1.25em auto 0;
+    padding: 0
+}
+
+
+
+.swal2-styled {
+    margin: .3125em;
+    padding: .625em 1.1em;
+    transition: box-shadow .1s;
+    box-shadow: 0 0 0 3px transparent;
+    font-weight: 500
+}
+
+.swal2-styled:not([disabled]) {
+    cursor: pointer
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: .25em;
+    background: initial;
+    background-color: #7066e0;
+    color: #fff;
+    font-size: 1em
+}
+
+
+
+.swal2-html-container {
+    z-index: 1;
+    justify-content: center;
+    margin: 1em 1.6em .3em;
+    padding: 0;
+    overflow: auto;
+    color: inherit;
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word
+}
+
+.swal2-icon {
+    position: relative;
+    box-sizing: content-box;
+    justify-content: center;
+    width: 5em;
+    height: 5em;
+    margin: 2.5em auto .6em;
+    border: .25em solid transparent;
+    border-radius: 50%;
+    border-color: #000;
+    font-family: inherit;
+    line-height: 5em;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+
+
+.swal2-icon.swal2-error {
+    border-color: #f27474;
+    color: #f27474
+}
+
+.swal2-icon.swal2-error .swal2-x-mark {
+    position: relative;
+    flex-grow: 1
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+    display: block;
+    position: absolute;
+    top: 2.3125em;
+    width: 2.9375em;
+    height: .3125em;
+    border-radius: .125em;
+    background-color: #f27474
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+    left: 1.0625em;
+    transform: rotate(45deg)
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+    right: 1em;
+    transform: rotate(-45deg)
+}
+
+.swal2-icon.swal2-error.swal2-icon-show {
+    animation: swal2-animate-error-icon .5s
+}
+
+.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
+    animation: swal2-animate-error-x-mark .5s
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #facea8;
+    color: #f8bb86
+}
+
+
+[class^=swal2] {
+    -webkit-tap-highlight-color: transparent
+}
+
+.swal2-show {
+    animation: swal2-show .3s
+}
+
+.swal2-hide {
+    animation: swal2-hide .15s forwards
+}
+
+.swal2-noanimation {
+    transition: none
+}
+
+.swal2-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll
+}
+
+.swal2-rtl .swal2-close {
+    margin-right: initial;
+    margin-left: 0
+}
+
+.swal2-rtl .swal2-timer-progress-bar {
+    right: 0;
+    left: auto
+}
+
+@keyframes swal2-show {
+    0% {
+        transform: scale(.7)
+    }
+
+    45% {
+        transform: scale(1.05)
+    }
+
+    80% {
+        transform: scale(.95)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes swal2-hide {
+    0% {
+        transform: scale(1);
+        opacity: 1
+    }
+
+    100% {
+        transform: scale(.5);
+        opacity: 0
+    }
+}
+
+
+@keyframes swal2-animate-error-x-mark {
+    0% {
+        margin-top: 1.625em;
+        transform: scale(.4);
+        opacity: 0
+    }
+
+    50% {
+        margin-top: 1.625em;
+        transform: scale(.4);
+        opacity: 0
+    }
+
+    80% {
+        margin-top: -.375em;
+        transform: scale(1.15)
+    }
+
+    100% {
+        margin-top: 0;
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes swal2-animate-error-icon {
+    0% {
+        transform: rotateX(100deg);
+        opacity: 0
+    }
+
+    100% {
+        transform: rotateX(0);
+        opacity: 1
+    }
+}
