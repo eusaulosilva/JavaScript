@@ -65,39 +65,40 @@ function mostrarDiv() {
     const divExistente = document.querySelector(".result");
     if (divExistente) {
         divExistente.remove();
-      } else {
-    // Cria um novo elemento <div>
-    const div = document.createElement("div");
+    } else {
+        // Cria um novo elemento <div>
+        const div = document.createElement("div");
 
-    // Obtém a referência ao elemento com a classe "input"
-    const input = document.querySelector(".input");
+        // Obtém a referência ao elemento com a classe "input"
+        const input = document.querySelector(".input");
 
-    // Adiciona a classe "result" à div
-    div.classList.add("result");
+        // Adiciona a classe "result" à div
+        div.classList.add("result");
 
-    // Insere a div como um filho do elemento com a classe "input"
-    input.insertAdjacentElement("beforeend", div);
+        // Insere a div como um filho do elemento com a classe "input"
+        input.insertAdjacentElement("beforeend", div);
 
-    // Cria um novo elemento <p>
-    const p = document.createElement("p");
+        // Cria um novo elemento <p>
+        const p = document.createElement("p");
 
-    // Adiciona a identificação "result" ao parágrafo
-    p.id = "result";
+        // Adiciona a identificação "result" ao parágrafo
+        p.id = "result";
 
-    // Obtém a referência à div com a classe "result"
-    const mostrar = document.querySelector(".result");
+        // Obtém a referência à div com a classe "result"
+        const mostrar = document.querySelector(".result");
 
-    // Insere o parágrafo como um filho da div
-    mostrar.insertAdjacentElement("afterbegin", p);
+        // Insere o parágrafo como um filho da div
+        mostrar.insertAdjacentElement("afterbegin", p);
 
-    var result = document.querySelector("#result");
-    
-      }
+        var result = document.querySelector("#result");
+
+
+    }
     // Adiciona algum texto ao parágrafo
 
 }
-function apagarDiv(){
-// Obtém a referência à div com a classe "result"
+function apagarDiv() {
+    // Obtém a referência à div com a classe "result"
     const divParaExcluir = document.querySelector(".result");
 
     // Verifica se a div existe antes de tentar excluí-la
@@ -109,7 +110,7 @@ function apagarDiv(){
 function tabuada() {
     let tabuada = [5];
     tabuada[0] = Number(document.querySelector("#inicio").value);
-    tabuada[3] = document.querySelector("#result");
+
     tabuada[2] = document.querySelector('#opera').value;
 
 
@@ -129,6 +130,8 @@ function tabuada() {
 
         })
     } else {
+        mostrarDiv();
+        tabuada[3] = document.querySelector("#result");
         tabuada[3].innerHTML = ("");
         switch (tabuada[2]) {
             case "+":
@@ -183,7 +186,7 @@ function custo() {
         })
     } else {
         mostrarDiv();
-        
+
         var porce = (porcen / 100) * custo;
         var impos = (impost / 100) * custo;
         var calc = parseFloat(custo) + parseInt(porce) + parseInt(impos);
@@ -306,13 +309,13 @@ function gorjeta() {
 
         })
 
-    } else{
-    var taxa = 10 / 100;
-    var garcom = taxa * conta;
-    var total = parseFloat(garcom) + parseFloat(conta);
-    result.innerHTML = (`10% do garçom: ${(garcom.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }))} <br>
+    } else {
+        var taxa = 10 / 100;
+        var garcom = taxa * conta;
+        var total = parseFloat(garcom) + parseFloat(conta);
+        result.innerHTML = (`10% do garçom: ${(garcom.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }))} <br>
     Total: ${(total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }))}`);
-}
+    }
 }
 
 function dobro() {
@@ -436,7 +439,7 @@ function contadorHoras() {
 }
 function antecessor() {
     var num1 = document.querySelector('.antecessor').value;
-    var result = document.querySelector('#result');
+   
     if (num1 == "") {
         Swal.fire({
             icon: 'error',
@@ -446,9 +449,10 @@ function antecessor() {
         })
 
     } else {
-    var anter = num1 - 1;
-    result.innerHTML = (`Número: <b>${num1}</b>  <br> Antecessor: <b>${anter}</b> `)
-}
+        mostrarDiv();
+        var anter = num1 - 1;
+        result.innerHTML = (`Número: <b>${num1}</b>  <br> Antecessor: <b>${anter}</b> `)
+    }
 }
 
 function limpar() {
@@ -470,7 +474,8 @@ function limpar1() {
 
     operar.value = ("");
     result.innerHTML = ("");
-    
+    apagarDiv();
+
 }
 function limpar2() {
     var custo = document.querySelector('.custo');
@@ -584,13 +589,14 @@ function limpar12() {
     dataAtual.value = ("");
     result.innerHTML = ("");
 }
-function limpar13(){
+function limpar13() {
     var num1 = document.querySelector('.antecessor');
     var result = document.querySelector('#result');
     num1.value = ("");
     result.innerHTML = ("");
+    apagarDiv();
 }
-function limpar14(){
+function limpar14() {
     var conta = document.querySelector('.salarioAtual');
     var result = document.querySelector("#result");
     conta.value = ("");

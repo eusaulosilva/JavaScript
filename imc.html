@@ -15,29 +15,30 @@
 
 </head>
 
-<body class="degrade">
-    <center>
-        <main class="efeito-vidro">
-            <h1>IMC</h1>
-
-            <div class="input" id="imc">
-                Peso<br><input type="number" class="peso" min="0" >
-                <br><br>
-                Altura<br><input type="number" class="altura" min="0" placeholder="Ex.: 0,00" ><br><br>
-
-                <button id="limp" onclick="limpar()">Limpar</button>
-                <button id="envi" onclick="imc()">Enviar</button>
-                <a href="index.html"><button id="volt">Voltar</button></a>
-
+<body>
+    <main>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="efeito-vidro input" id="imc">
+                            <h1 class="imc">IMC</h1>
+                            <span for="peso">Peso</span>
+                            <input type="number" class="peso" name="peso" min="0">
+                            <span for="altura">Altura</span>
+                            <input type="number" class="altura" min="0" name="altura" placeholder="Ex.: 0,00">
+                            
+                            <div class="botoes">
+                            <button id="limp" onclick="limpar()">Limpar</button>
+                            <button id="envi" onclick="imc()">Enviar</button>
+                            <a href="index.html"><button id="volt">Voltar</button></a>
+                            </div>
+                            
+                    </div>
+                </div>
             </div>
-            <div class="result">
-                <p id="result"></P>
+        </div>
 
-            </div>
-
-
-        </main>
-    </center>
+    </main>
 </body>
 
 </html>

@@ -15,29 +15,27 @@
 
 </head>
 
-<body class="degrade">
-    <center>
-        <main class="efeito-vidro">
-            <h1>Antecessor</h1>
-
-            <div class="input" id="imc">
-                Digite um número <br><input type="number" class="antecessor" min="0" >
-                <br><br>
-                
-
-                <button id="limp" onclick="limpar13()">Limpar</button>
-                <button id="envi" onclick="antecessor()">Enviar</button>
-                <a href="index.html"><button id="volt">Voltar</button></a>
-
+<body>
+    <main>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="efeito-vidro input" id="imc">
+                            <h1>Antecessor</h1>
+                            <span for="antecessor">Digite um número</span>
+                            <input type="number" class="antecessor" name="antecessor" min="0">
+                            
+                            <div class="botoes">
+                            <button id="limp" onclick="limpar13()">Limpar</button>
+                            <button id="envi" onclick="antecessor()">Enviar</button>
+                            <a href="index.html"><button id="volt">Voltar</button></a>
+                            </div>
+                    </div>
+                </div>
             </div>
-            <div class="result">
-                <p id="result"></P>
+        </div>
 
-            </div>
-
-
-        </main>
-    </center>
+    </main>
 </body>
 
 </html>

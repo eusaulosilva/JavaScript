@@ -13,37 +13,37 @@
     <title>TABUADA</title>
 
 </head>
-
-<body class="degrade">
-    <center>
-        <main class="efeito-vidro ">
-            <h1>Tabuada</h1>
-
-            <div class="input " id="imc">
-                Tabuada do <br><input type="number" id="inicio" min="0" >
-                <br><br>
-                <select type="button" class="ope" name="" id="opera">
-                    <option value="">Operadores</option>
-                    <option value="+">Adição</option>
-                    <option value="-">Subtração</option>
-                    <option value="*">Multiplição</option>
-                    <option value="/">Divisão</option>
-                </select>
-                <br> <button id="limp" onclick="limpar1()">Limpar</button>
-                <button id="envi" onclick="tabuada()">Enviar</button>
-                <a href="index.html"><button id="volt">Voltar</button></a>
-
-
+<body>
+    <main>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="efeito-vidro input" id="imc">
+                        <h1>Tabuada</h1>
+                            <span for="peso"> Tabuada do</span>
+                            <input type="number" id="inicio" min="0" >
+                            
+                            <select type="button" class="ope botoes" name="" id="opera">
+                                <option value="">Operadores</option>
+                                <option value="+">Adição</option>
+                                <option value="-">Subtração</option>
+                                <option value="*">Multiplição</option>
+                                <option value="/">Divisão</option>
+                            </select>
+                            
+                            <div class="botoes">
+                            <button id="limp" onclick="limpar1()">Limpar</button>
+                            <button id="envi" onclick="tabuada()">Enviar</button>
+                            <a href="index.html"><button id="volt">Voltar</button></a>
+                            </div>
+                            
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="resultado">
-                <p id="result"></P>
-
-            </div>
-
-        </main>
-    </center>
-
+    </main>
 </body>
+
 
 </html>
