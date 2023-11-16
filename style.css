@@ -23,7 +23,7 @@ div.container {
     
 }
 
-span, .botoes{
+#imc span, .botoes{
     margin: 0.5rem;
 }
 .efeito-vidro {
